@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "GIH",
+    "slug": "GIH",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "gih",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gih.galaxyinhands",
+      "infoPlist": {
+        "NSCameraUsageDescription": "GIH uses the camera to overlay live stars, planets, satellites, and black holes on the sky.",
+        "NSLocationWhenInUseUsageDescription": "GIH uses your location to calculate where celestial objects appear from where you are standing.",
+        "NSMotionUsageDescription": "GIH uses motion sensors so overlays stay aligned with the real sky as you move the phone."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#05060D",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.gih.galaxyinhands",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "GIH uses the camera to overlay live stars, planets, satellites, and black holes on the sky.",
+          "microphonePermission": "GIH does not record audio.",
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "GIH uses your location to calculate where celestial objects appear from where you are standing."
+        }
+      ],
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "GIH uses motion sensors so overlays stay aligned with the real sky as you move the phone."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
